@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  rabbitmq:
+    image: rabbitmq:3.11-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    # restart: unless-stopped
+    networks:
+      - rabbitmq-nw
+    volumes:
+      - /dockerd/rabbitmq:/var/lib/rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=passw0rd
+
+networks:
+  rabbitmq-nw:
+    driver: bridge
+volumes:
+  data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: ./.data
