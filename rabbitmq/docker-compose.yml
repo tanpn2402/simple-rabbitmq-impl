@@ -9,7 +9,7 @@ services:
     networks:
       - rabbitmq-nw
     volumes:
-      - data:/var/lib/rabbitmq
+      - /dockerd/rabbitmq:/var/lib/rabbitmq
     environment:
       - RABBITMQ_DEFAULT_USER=user
       - RABBITMQ_DEFAULT_PASS=passw0rd

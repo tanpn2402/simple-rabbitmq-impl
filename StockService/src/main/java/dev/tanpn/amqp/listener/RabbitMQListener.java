@@ -1,4 +1,4 @@
-package dev.tanpn;
+package dev.tanpn.amqp.listener;
 
 import java.util.Map;
 import java.util.logging.Logger;
